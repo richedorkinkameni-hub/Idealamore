@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#17111f">
+  <meta name="description" content="l’idéalAmore — des rencontres authentiques, dans le respect et la sincérité.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>l’idéalAmore</title>
+</head>
+<body>
+  <main id="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="l’idéalAmore accueil"><span class="brand-mark">♥</span><span>l’idéal<span class="gold">Amore</span></span></a>
+      <button id="installBtn" class="install-btn hidden" type="button">Installer</button>
+    </header>
+
+    <section id="ageGate" class="gate">
+      <div class="gate-card">
+        <div class="brand-mark big">♥</div>
+        <p class="eyebrow">RENCONTRES AUTHENTIQUES</p>
+        <h1>Et si la rencontre commençait par l’essentiel&nbsp;?</h1>
+        <p class="muted">Une première version de l’idéalAmore, pensée pour des rencontres sincères et respectueuses.</p>
+        <label class="checkline"><input id="ageCheck" type="checkbox"> Je confirme avoir 18 ans ou plus.</label>
+        <label class="checkline"><input id="termsCheck" type="checkbox"> J’accepte de consulter les règles de respect et de sécurité.</label>
+        <button id="enterBtn" class="primary full" type="button">Découvrir la démo</button>
+        <p class="tiny">Prototype de démonstration : aucun compte réel n’est créé et aucun message n’est envoyé.</p>
+      </div>
+    </section>
+
+    <section id="mainView" class="hidden">
+      <div class="welcome">
+        <p class="eyebrow">BIENVENUE SUR</p>
+        <h1>l’idéal<span class="gold">Amore</span></h1>
+        <p class="muted">Une rencontre se construit à deux.</p>
+      </div>
+      <nav class="tabs" aria-label="Navigation principale">
+        <button class="tab active" data-view="discover">♥ <span>Découvrir</span></button>
+        <button class="tab" data-view="matches">✦ <span>Matchs</span></button>
+        <button class="tab" data-view="messages">✉ <span>Messages</span></button>
+        <button class="tab" data-view="profile">♙ <span>Profil</span></button>
+      </nav>
+      <section id="discoverView" class="view">
+        <div class="section-head"><div><p class="eyebrow">PEUT-ÊTRE UNE BELLE HISTOIRE</p><h2>À découvrir</h2></div><span class="demo-pill">DÉMO</span></div>
+        <article class="profile-card">
+          <div id="profileArt" class="profile-art art-1"><span class="art-sun"></span><span class="art-person">✦</span><span class="art-caption">Portrait de démonstration</span></div>
+          <div class="profile-info"><div><h3 id="personName">Maya, 26</h3><p id="personMeta" class="muted">Avignon · Aime voyager</p></div><span class="verified">✓ Démo</span></div>
+          <p id="personBio" class="bio">« Les plus belles connexions commencent par une conversation sincère. »</p>
+          <div class="actions"><button id="passBtn" class="round pass" aria-label="Passer">×</button><button id="likeBtn" class="round like" aria-label="Aimer">♥</button></div>
+        </article>
+        <p class="tiny center">Les profils affichés sont fictifs. Les likes restent sur cet appareil.</p>
+      </section>
+      <section id="matchesView" class="view hidden">
+        <div class="section-head"><div><p class="eyebrow">CONNEXIONS</p><h2>Mes matchs</h2></div></div>
+        <div id="matchesList" class="empty-state"><span class="empty-icon">♡</span><h3>Vos prochaines belles histoires</h3><p class="muted">Les matchs réciproques seront disponibles quand les comptes réels seront connectés.</p></div>
+      </section>
+      <section id="messagesView" class="view hidden">
+        <div class="section-head"><div><p class="eyebrow">ÉCHANGER</p><h2>Messages</h2></div></div>
+        <div class="empty-state"><span class="empty-icon">✉</span><h3>La conversation commence ici</h3><p class="muted">La messagerie réelle sera activée après la mise en place d’un serveur sécurisé.</p></div>
+      </section>
+      <section id="profileView" class="view hidden">
+        <div class="section-head"><div><p class="eyebrow">VOTRE ESPACE</p><h2>Mon profil</h2></div></div>
+        <div class="panel">
+          <div class="avatar">IA</div><h3>Mon profil de démonstration</h3><p class="muted">Votre vrai profil pourra contenir vos photos, votre âge, votre ville et votre présentation.</p>
+          <button class="secondary full" id="editProfileBtn">Prévisualiser mon profil</button>
+        </div>
+        <div class="panel premium-panel"><p class="eyebrow">L’EXPÉRIENCE PLUS</p><h3>l’idéalAmore Premium</h3><p>Plus de possibilités, une expérience pensée pour vous.</p><ul><li>Options de découverte avancées</li><li>Préférences élargies</li><li>Fonctions supplémentaires à définir</li></ul><button id="premiumBtn" class="primary full">Découvrir Premium</button><p class="tiny">Aucun paiement n’est activé dans cette démo.</p></div>
+        <div class="panel safety"><h3>Respect et sécurité</h3><p class="muted">En cas de danger, contactez les services d’urgence. Dans la version réelle, le blocage et le signalement seront accessibles sur chaque profil et conversation.</p><button id="safetyBtn" class="secondary full">Voir les règles de sécurité</button></div>
+      </section>
+      <footer><span>l’idéalAmore © 2026</span><span>Prototype · Version 0.1</span></footer>
+    </section>
+    <div id="toast" role="status" class="toast hidden"></div>
+    <dialog id="infoDialog"><div class="dialog-inner"><button id="closeDialog" class="close" aria-label="Fermer">×</button><div id="dialogContent"></div></div></dialog>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
